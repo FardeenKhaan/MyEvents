@@ -3,7 +3,7 @@
 /// This class contains all the App Images in String formats.
 class FkImages {
   // -- App Logos
-  static const String splashLogo = "assets/logo.png";
+  static const String splashLogo = "assets/splash_logo.png";
   static const String profileLogo = "assets/logo/profile.png";
 
   // -- Onboarding Image
@@ -14,7 +14,8 @@ class FkImages {
   static const String logIn = "assets/login_logo.png";
 
   // -- Icons
-  static const String googleLogo = "assets/google_icon.png";
+  static const String googleLogo = "assets/google-icon.png";
+  static const String facebookLogo = "assets/facebook-icon.png";
 
   // -- Promo Banner
   static const String promoBanner1 = "assets/PromoBanner1.png";

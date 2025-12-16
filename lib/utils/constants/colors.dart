@@ -4,13 +4,12 @@ class FkColors {
   static Color appColor = Color(0xFFEFEFEF);
 
   static const Color authenticationColor = Color(0xFF4A4A4A);
-  static const Color primary = Color(0xFF6BBF59);
-  static const Color secondary = Color(0xFF2F6B27);
+  static const Color primary = Color(0xFF1C3F55);
+  static const Color secondary = Color(0xFF464747);
   static const Color counterBackground = Color(0xFFE0E0E0);
   static const Color decreasingButton = Color(0xFFB4C3B2);
 
-  static const orangeGradientStart = Color(0xFFFF9800);
-  static const orangeGradientEnd = Color(0xFFFFC107);
+  static const yellowApp = Color(0xFFCAA54A);
   // static const black = Colors.black;
 
   // Text colors
