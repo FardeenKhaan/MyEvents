@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:my_events/routes/app_routes.dart';
 import 'package:my_events/utils/constants/image_strings.dart';
+import 'package:my_events/utils/storage/secure_storage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -40,10 +41,19 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _navigateToHome() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () async {
       // getIt<UserSession>().redirectUser();
       // getIt<ApiServices>().initializeOptions();
-      Get.toNamed(AppRoutes.loginScreen);
+      // Get.toNamed(AppRoutes.loginScreen);
+      final token = await SecureStorage.getToken();
+
+      Future.delayed(const Duration(seconds: 2), () {
+        if (token != null) {
+          Get.offAllNamed(AppRoutes.homeScreen);
+        } else {
+          Get.offAllNamed(AppRoutes.loginScreen);
+        }
+      });
     });
   }
 
