@@ -1,59 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_events/utils/helpers/snackbar_helpers.dart';
-import '../../../../utils/constants/keys.dart';
+import 'package:my_events/data/repositories/auth_repository.dart';
+import 'package:my_events/routes/app_routes.dart';
+import 'package:my_events/utils/storage/secure_storage.dart';
 
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
 
-  /// Variables
-  // final _repository = Get.put(AuthenticationRepository());
+  final AuthRepository _repo = AuthRepository();
 
   final email = TextEditingController();
   final password = TextEditingController();
-  RxBool isLoading = false.obs;
-  RxBool obscurePassword = true.obs;
-  RxBool rememberMe = false.obs;
-  // final localStorage = FkLocalStorage.appStorage;
+
+  final rememberMe = false.obs;
+  final obscurePassword = true.obs;
+  final isLoading = false.obs;
 
   final formKey = GlobalKey<FormState>();
 
-  @override
-  void onInit() {
-    // email.text = localStorage.read(FkKeys.rememberMeEmail) ?? '';
-    // password.text = localStorage.read(FkKeys.rememberMePassword) ?? '';
-    super.onInit();
-  }
-
-  /// [Login]
   Future<void> login() async {
+    if (!formKey.currentState!.validate()) return;
+
     try {
-      // start loading
       isLoading.value = true;
 
-      // form validation
-      if (!formKey.currentState!.validate()) return;
+      final response = await _repo.login(email: email.text.trim(), password: password.text.trim());
 
-      // Save Data if remember me is checked
-      // if(rememberMe.value){
-      //   localStorage.write(FkKeys.rememberMeEmail, email.text.trim());
-      //   localStorage.write(FkKeys.rememberMePassword, password.text.trim());
-      // }
+      if (rememberMe.value) {
+        await SecureStorage.saveToken(response.token);
+      }
 
-      // // login the user
-      // UserModel user = await _repository.loginUser(email.text.trim(), password.text.trim());
-      // if(user.id.isNotEmpty){
-
-      //   // save user into local
-      //   await getIt<UserSession>().saveUser(user);
-
-      //   // redirect to home
-      //   Get.offAllNamed(AppRoutes.navigationMenu);
-      // }
+      Get.snackbar('Success', 'Login successful');
+      // Navigate to Home
+      Get.offAllNamed(AppRoutes.homeScreen);
     } catch (e) {
-      FkSnackBarHelpers.errorSnackBar(title: 'Failed', message: e.toString());
+      Get.snackbar('Login Failed', e.toString());
     } finally {
       isLoading.value = false;
     }
+  }
+
+  Future<void> logout() async {
+    await SecureStorage.clearToken();
+    Get.offAllNamed(AppRoutes.loginScreen);
   }
 }

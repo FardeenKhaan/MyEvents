@@ -1,51 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../routes/app_routes.dart';
-import '../../../../utils/helpers/snackbar_helpers.dart';
+import 'package:my_events/data/repositories/auth_repository.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
+  final AuthRepository _repo = AuthRepository();
 
-  /// Variables
-  // final _repository = Get.put(AuthenticationRepository());
-
+  final email = TextEditingController();
+  final password = TextEditingController();
+  final phoneNumber = TextEditingController();
   final firstName = TextEditingController();
   final lastName = TextEditingController();
-  final email = TextEditingController();
-  final phoneNumber = TextEditingController();
-  final password = TextEditingController();
-  RxBool isLoading = false.obs;
-  RxBool obscurePassword = true.obs;
 
+  final obscurePassword = true.obs;
+  final isLoading = false.obs;
   final formKey = GlobalKey<FormState>();
 
   Future<void> signup() async {
+    if (!formKey.currentState!.validate()) return;
+
     try {
-      // start loading
       isLoading.value = true;
 
-      // form validation
-      if (!formKey.currentState!.validate()) return;
+      await _repo.register(email: email.text.trim(), password: password.text.trim());
 
-      // UserModel user = UserModel(
-      //   email: email.text.trim(),
-      //   firstName: firstName.text.trim(),
-      //   lastName: lastName.text.trim(),
-      //   phone: phoneNumber.text.trim(),
-      // );
-
-      // // login the user
-      // UserModel newUser = await _repository.signupUser(user, password.text.trim());
-      // if(newUser.id.isNotEmpty){
-
-      //   // save user into local
-      //   getIt<UserSession>().saveUser(newUser);
-
-      //   // redirect to home
-      //   Get.offAllNamed(AppRoutes.navigationMenu);
-      // }
+      Get.snackbar('Success', 'Account created');
+      Get.back(); // Go to Login
     } catch (e) {
-      FkSnackBarHelpers.errorSnackBar(title: 'Failed', message: e.toString());
+      Get.snackbar('Signup Failed', e.toString());
     } finally {
       isLoading.value = false;
     }
