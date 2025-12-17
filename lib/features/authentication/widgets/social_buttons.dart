@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/get_instance.dart';
-import 'package:my_events/features/authentication/controller/login/login_controller.dart';
 import 'package:my_events/utils/constants/colors.dart';
 import 'package:my_events/utils/constants/image_strings.dart';
 import 'package:my_events/utils/constants/sizes.dart';
@@ -12,7 +8,7 @@ class FkSocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
+    // final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
