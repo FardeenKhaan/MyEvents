@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -18,7 +17,7 @@ class FkElevatedButton extends StatelessWidget {
     this.isLoading = false, // default
     this.height = 50,
     this.width,
-    this.backgroundColor = FkColors.buttonPrimary,
+    this.backgroundColor = FkColors.primary,
     this.textStyle,
   });
 
@@ -32,7 +31,7 @@ class FkElevatedButton extends StatelessWidget {
           backgroundColor: backgroundColor,
           disabledBackgroundColor: backgroundColor,
           splashFactory: NoSplash.splashFactory,
-          padding: EdgeInsets.zero
+          padding: EdgeInsets.zero,
         ),
         onPressed: isLoading ? null : onPressed,
         child: AnimatedSwitcher(
@@ -47,11 +46,7 @@ class FkElevatedButton extends StatelessWidget {
               : Text(
                   text,
                   key: const ValueKey('text'),
-                  style:
-                      textStyle ??
-                      Theme.of(
-                        context,
-                      ).textTheme.headlineSmall!.copyWith(color: Colors.white),
+                  style: textStyle ?? Theme.of(context).textTheme.headlineSmall!.copyWith(color: Colors.white),
                 ),
         ),
       ),
