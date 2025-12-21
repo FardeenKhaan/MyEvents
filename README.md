@@ -3,6 +3,14 @@
 A Flutter-based Event Management application built with GetX, supporting authentication, event browsing, event creation/editing (authorized users), offline mode with caching, pagination, and real-time connectivity handling.
 
 
+##### 👉 App Screen Shots #####
+<img width="150" height="300" alt="1" src="https://github.com/user-attachments/assets/003947a7-6a63-4380-82d5-fd321bff517a" />
+<img width="150" height="300" alt="2" src="https://github.com/user-attachments/assets/60dde8f5-c66a-449e-be9c-26fa75df57ea" />
+<img width="150" height="300" alt="3" src="https://github.com/user-attachments/assets/185f9552-96c4-478b-b698-573e20b9f92a" />
+<img width="150" height="300" alt="5" src="https://github.com/user-attachments/assets/27ad9705-d6fd-4688-84e8-0c52c13aff5c" />
+<img width="150" height="300" alt="4" src="https://github.com/user-attachments/assets/e68741da-9529-4f8e-9474-c6aca2f1c408" />
+
+
 ## 🔐 Test Account
 To evaluate the application, please use the following test credentials:
 
@@ -12,8 +20,8 @@ To evaluate the application, please use the following test credentials:
 These credentials are provided only for review and testing purposes.
 
 
-🚀 Features Overview
-✅ Core Features
+### 🚀 Features Overview
+## ✅ Core Features
 
 User authentication (login/logout)
 Browse events with pagination
@@ -24,7 +32,7 @@ Favorites support
 Pull-to-refresh
 
 
-🌐 Offline Support
+## 🌐 Offline Support
 
 Cached event list & event detail
 Offline banner indicator
@@ -32,7 +40,7 @@ No API calls while offline
 Seamless transition when connectivity is restored
 
 
-🧱 Architecture Overview
+## 🧱 Architecture Overview
 The app follows a clean, scalable architecture:
 
 lib/
@@ -45,7 +53,7 @@ lib/
 └── utils/              // Helpers, constants
 
 
-🔹 Architectural Choices & Justification
+## 🔹 Architectural Choices & Justification
 
 Choice	Reason
 GetX	Lightweight, reactive, fast navigation & state management
@@ -56,23 +64,23 @@ Local Storage	Offline-first experience
 Reactive State (Rx)	Instant UI updates without rebuild overhead
 
 
-📦 Packages Used
+## 📦 Packages Used
 
 Package	Purpose
-get	  ------------------- State management & navigation
-get_it	----------------- Dependency injection
-dio	--------------------- HTTP networking
-flutter_secure_storage -- for secure token
-connectivity_plus	------- Network status detection
-cached_network_image	--- Image caching
-flutter_secure_storage	- Secure token storage
-intl -------------------- for date time
-iconsax ----------------- for modern icon
-get_storage	------------- Lightweight local caching
-shimmer	----------------- Loading placeholders
+|| get	  ------------------- State management & navigation || 
+get_it	----------------- Dependency injection || 
+dio	--------------------- HTTP networking || 
+flutter_secure_storage -- for secure token || 
+connectivity_plus	------- Network status detection || 
+cached_network_image	--- Image caching || 
+flutter_secure_storage	- Secure token storage || 
+intl -------------------- for date time || 
+iconsax ----------------- for modern icon || 
+get_storage	------------- Lightweight local caching || 
+shimmer	----------------- Loading placeholders 
 
 
-🧠 AI / LLM Usage Disclosure
+## 🧠 AI / LLM Usage Disclosure
 
 AI tools (ChatGPT) were used only for:
 Architectural validation
@@ -83,7 +91,7 @@ README structure guidance
 ✅ All logic was reviewed, implemented, and customized manually
 
 
-⚙️ Setup & Run Instructions
+## ⚙️ Setup & Run Instructions
 1️⃣ Prerequisites
 
 Flutter SDK (>= 3.x)
@@ -105,7 +113,7 @@ flutter run
 Android APK
 
 
-👉 [Apk of My App]
+## 👉 [Apk of My App]
 https://drive.google.com/file/d/1eY2N06QGoPGi59jghDAxH6yy7owZ4msQ/view?usp=sharing
 
 iOS (Optional)
@@ -114,7 +122,7 @@ Built via Xcode
 Not included due to platform constraints
 
 
-🎥 Demo Video (≤ 5 minutes)
+## 🎥 Demo Video (≤ 5 minutes)
 
 The demo video demonstrates:
 Login / Logout
@@ -125,11 +133,11 @@ Edit event
 Offline mode behavior
 Online restoration
 
-👉 [Video Link of App]
+## 👉 [Video Link of App]
 https://drive.google.com/file/d/1x1yJu9xUKr5ZMdF9rXzz8hDshtVSHui1/view?usp=sharing
 
 
-🧪 Testing & CI
+## 🧪 Testing & CI
 Test Coverage
 
 Unit tests: ❌ (Not implemented)
@@ -148,7 +156,7 @@ Limited validation on date input
 No retry queue for offline create/edit actions
 No unit/widget tests (can be added)
 
-🧠 Design Decisions
+## 🧠 Design Decisions
 
 Event list is the single source of truth
 Detail screen syncs with list state
@@ -156,17 +164,17 @@ Offline-first approach prioritized
 
 API calls blocked during offline mode to prevent errors
 
-🧪 ReqRes API
+## 🧪 ReqRes API
 
 Used for Authentication Purpose, espicially for Login
 
-🧪 Mock API
+## 🧪 Mock API
 
 No mock server included
 App assumes a working REST API
 Local cache acts as fallback during offline usage
 
-✅ Requirement Checklist (PDF)
+## ✅ Requirement Checklist (PDF)
 
 Requirement	Status
 Git repo with commit history	✅
@@ -178,8 +186,9 @@ Create/Edit events	✅
 Connectivity handling	✅
 CI workflow	✅
 Test results	⚠️ Partial
-👨‍💻 Author
 
+
+## 👨‍💻 Author
 Name: Fardeen Khan
 Role: Flutter Developer
 Contact: [fardeenkhaan70@gmail.com / https://www.linkedin.com/in/fardeenkhan51/]
