@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:my_events/routes/app_routes.dart';
 import '../../utils/constants/colors.dart';
 
 class TermsAndConditions extends StatelessWidget {
@@ -20,7 +23,7 @@ class TermsAndConditions extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                // Get.toNamed(AppRoutes.termsConditionsScreen);
+                Get.toNamed(AppRoutes.termsConditionsScreen);
               },
               child: Text(
                 'terms and conditions',
@@ -39,7 +42,7 @@ class TermsAndConditions extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // Get.toNamed(AppRoutes.privacyPolicyScreen);
+                Get.toNamed(AppRoutes.privacyPolicyScreen);
               },
               child: Text(
                 'Privacy Policy',
