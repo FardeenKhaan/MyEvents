@@ -2,30 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../constants/colors.dart';
-import 'helper_functions.dart';
 
-class FkSnackBarHelpers{
-  static customToast({required message}) {
-    ScaffoldMessenger.of(Get.context!).showSnackBar(
-      SnackBar(
-        elevation: 0,
-        duration: const Duration(seconds: 3),
-        backgroundColor: Colors.transparent,
-        content: Container(
-          padding: const EdgeInsets.all(12.0),
-          margin: const EdgeInsets.symmetric(horizontal: 30.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: FkHelperFunctions.isDarkMode(Get.context!)
-                ? FkColors.darkerGrey.withValues(alpha: 0.9)
-                : FkColors.primary.withValues(alpha: 0.9),
-          ),
-          child: Center(child: Text(message, style: Theme.of(Get.context!).textTheme.labelLarge)),
-        ),
-      ),
-    );
-  }
-
+class FkSnackBarHelpers {
   static void showSnackBar(String message) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(content: Text(message)));
   }
@@ -65,7 +43,7 @@ class FkSnackBarHelpers{
       isDismissible: true,
       shouldIconPulse: true,
       colorText: FkColors.white,
-      backgroundColor: FkColors.buttonPrimary,
+      backgroundColor: Color(0xFF6B7B8C),
       snackPosition: SnackPosition.TOP,
       duration: Duration(seconds: duration),
       margin: const EdgeInsets.all(10),

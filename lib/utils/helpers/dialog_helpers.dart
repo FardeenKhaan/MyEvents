@@ -8,11 +8,4 @@ class FkDialogHelpers {
 
     return result ?? false;
   }
-
-  /// Dialog before delete cart item
-  // static void showDeleteConfirmation(BuildContext context, CartItemModel item, CartController controller) {
-  //   Get.dialog(
-  //     CartItemDeleteDialog(item: item),
-  //   );
-  // }
 }

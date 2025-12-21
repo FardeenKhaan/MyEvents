@@ -20,16 +20,7 @@ class FkColors {
 
   // Background colors
   static const Color light = Color(0xFFF6F7F9); // very light gray-blue
-  // static const Color dark = Color(0xFF1C1E22); // near black
   static const Color dark = Color(0xFF272727);
-
-  static const Color priceTagBackground = Color(0xFF9CAD83); // light orange/yellow
-  static const Color categoriesBackground = Color(0xFFD9FEDC);
-
-  // Cart icon circle
-  static const Color cartIconCircle = Color(0xFFA9D18E);
-
-  static const Color primaryBackground = Color(0xFFEAF0F5); // soft tint of primary
 
   // Background Container colors
   static const Color lightContainer = Color(0xFFF2F4F6);

@@ -29,21 +29,4 @@ class FkHelperFunctions {
       canPopNow.value = true;
     }
   }
-
-  static Color getStatusColor(String status) {
-    switch (status.toLowerCase()) {
-      case 'pending':
-        return Colors.orange;
-      case 'confirmed':
-      case 'preparing':
-        return Colors.blue;
-      case 'delivered':
-      case 'completed':
-        return Colors.green;
-      case 'cancelled':
-        return Colors.red;
-      default:
-        return Colors.grey;
-    }
-  }
 }
