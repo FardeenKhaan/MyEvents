@@ -6,6 +6,7 @@ class EventListShimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemCount: 6, itemBuilder: (context, index) => const EventShimmerCard());
+    /// Simmer Cards Showing List
+    return ListView.builder(itemCount: 9, itemBuilder: (context, index) => const EventShimmerCard());
   }
 }
