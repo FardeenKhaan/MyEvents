@@ -1,10 +1,10 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:my_events/utils/constants/api_keys.dart';
+import 'package:my_events/env/keys.dart';
 
 class SecureStorage {
   // Create storage
   static const _storage = FlutterSecureStorage();
-  static const _tokenKey = FkApiKeys.secureStorageToken;
+  static const _tokenKey = FkKeys.secureStorageToken;
 
   // Save token
   static Future<void> saveToken(String token) async {
