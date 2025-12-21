@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_events/features/authentication/controller/login/login_controller.dart';
 import 'package:my_events/features/authentication/screens/logIn/widgets/login_form.dart';
 import 'package:my_events/features/authentication/screens/logIn/widgets/login_header.dart';
 import 'package:my_events/features/authentication/widgets/form_divider.dart';
@@ -13,32 +12,34 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get.put(LoginController());
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            // padding: FkSpacingStyle.paddingWithAppBarHeight,
-            padding: EdgeInsets.all(FkSizes.defaultSpace),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                /// Logo , Title And Subtitle
-                const FkLoginHeader(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            /// Header
+            const FkLoginHeader(),
 
-                /// Form
-                const LoginForm(),
+            /// Form Section
+            Padding(
+              padding: const EdgeInsets.all(FkSizes.defaultSpace),
+              child: Column(
+                children: [
+                  SizedBox(height: FkSizes.spaceBtwItems),
 
-                /// Divider
-                FkFormDivider(dividerText: FkTexts.orSignInWith.capitalize!),
-                const SizedBox(height: FkSizes.spaceBtwSections),
+                  /// textFields & button
+                  const LoginForm(),
+                  const SizedBox(height: FkSizes.spaceBtwSections),
 
-                /// Footer
-                const FkSocialButtons(),
-              ],
+                  /// Form Divider
+                  FkFormDivider(dividerText: FkTexts.orSignInWith.capitalize!),
+                  const SizedBox(height: FkSizes.spaceBtwSections),
+
+                  /// Social Buttons as static for now
+                  const FkSocialButtons(),
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

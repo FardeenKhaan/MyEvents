@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_events/routes/app_routes.dart';
-
 import '../../../../../utils/constants/colors.dart';
 
 class DontAccount extends StatelessWidget {
