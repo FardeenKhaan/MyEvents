@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:my_events/features/authentication/controller/signup/signup_controller.dart';
+import 'package:my_events/routes/app_routes.dart';
+import 'package:my_events/utils/constants/text_strings.dart';
 import '../../../../../../common/widgets/buttons/feature_provider_button.dart';
 import '../../../../../../utils/constants/sizes.dart';
-import '../../../../../../utils/device/device_utility.dart';
 import '../../../../../../utils/validators/validators.dart';
 
 class SignupForm extends StatelessWidget {
@@ -86,11 +87,21 @@ class SignupForm extends StatelessWidget {
           Obx(
             () => Center(
               child: FkElevatedButton(
-                width: FkDeviceUtils.getScreenWidth(context) * 0.5,
+                width: double.infinity,
                 text: "Sign Up",
                 isLoading: controller.isLoading.value,
                 onPressed: controller.signup,
               ),
+            ),
+          ),
+          SizedBox(height: FkSizes.spaceBtwSections),
+
+          /// Already Account Button
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton(
+              onPressed: () => Get.toNamed(AppRoutes.loginScreen),
+              child: const Text(FkTexts.alreadyHaveAnAccount),
             ),
           ),
         ],

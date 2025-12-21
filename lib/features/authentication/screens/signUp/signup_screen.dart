@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_events/common/widgets/appbar/app_reusable_appbar.dart';
 import 'package:my_events/features/authentication/controller/signup/signup_controller.dart';
 import 'package:my_events/features/authentication/screens/signUp/widgets/signup_form.dart';
 import 'package:my_events/features/authentication/widgets/form_divider.dart';
@@ -14,7 +15,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(SignupController());
     return Scaffold(
-      appBar: AppBar(),
+      appBar: FkAppBar(showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(FkSizes.defaultSpace),
@@ -27,6 +28,7 @@ class SignUpScreen extends StatelessWidget {
 
               /// Form
               const SignupForm(),
+              const SizedBox(height: FkSizes.spaceBtwSections),
 
               /// Divider
               FkFormDivider(dividerText: FkTexts.orSignUpWith.capitalize!),
