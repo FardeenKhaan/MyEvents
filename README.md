@@ -191,4 +191,9 @@ Test results	⚠️ Partial
 ## 👨‍💻 Author
 Name: Fardeen Khan
 Role: Flutter Developer
-Contact: [fardeenkhaan70@gmail.com / https://www.linkedin.com/in/fardeenkhan51/]
+
+## 📞 Contact Me
+Looking to collaborate or hire me? Let’s connect:
+- **Email**: [fardeenkhaan70@gmail.com]
+- **LinkedIn**: [https://linkedin.com/in/fardeenkhan51]
+- **Twitter**: [https://x.com/KhaanFardeen1]
