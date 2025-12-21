@@ -8,10 +8,11 @@ class FkSocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final controller = Get.put(LoginController());
+    /// Row with social media buttons
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        // Google Button
         Container(
           decoration: BoxDecoration(
             border: Border.all(color: FkColors.grey),
@@ -23,6 +24,7 @@ class FkSocialButtons extends StatelessWidget {
           ),
         ),
         const SizedBox(width: FkSizes.spaceBtwItems),
+        // Facebook Button
         Container(
           decoration: BoxDecoration(
             border: Border.all(color: FkColors.grey),
