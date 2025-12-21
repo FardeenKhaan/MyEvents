@@ -1,3 +1,0 @@
-
-
-enum ProductCategory {juices, smoothies}
