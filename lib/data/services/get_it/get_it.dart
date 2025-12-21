@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:my_events/data/repositories/auth_repository.dart';
 import 'package:my_events/data/repositories/event_repository.dart';
-import 'package:my_events/data/services/api/api_service.dart';
+import 'package:my_events/data/services/api/auth_api_service.dart';
 import 'package:my_events/data/services/api/event_api_service.dart';
 
 final getIt = GetIt.instance;
